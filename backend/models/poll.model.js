@@ -25,6 +25,11 @@ const Poll = sequelize.define('Poll', {
             min: 0,
         }
     },
+    votes: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 0
+    },
     maximumReward: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -54,8 +59,11 @@ const QuestionSet = sequelize.define('QuestionSet', {
         allowNull: false,
     },
     answer: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.JSON,
         allowNull: false
+    }, analytics: {
+        type: DataTypes.JSON,
+        allowNull: true
     }
 });
 

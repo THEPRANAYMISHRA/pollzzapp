@@ -6,7 +6,7 @@ pollRouter.post('/polls', handleCreateNewPoll)
 pollRouter.get('/polls', handleGetAllPolls)
 pollRouter.put('/polls/:pollId', handleUpdatePoll)
 pollRouter.post('/polls/:pollId/submit', handleSubmitForAPoll)
-// pollRouter.get('/polls/:pollId/analytics',)
+pollRouter.get('/polls/:pollId/analytics', handlePollsAnalaytics)
 pollRouter.get('/polls/analytics', handlePollsAnalaytics)
 
 module.exports = pollRouter;
