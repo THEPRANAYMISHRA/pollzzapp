@@ -58,10 +58,13 @@ This document serves as a guide to the Poll API application. It provides an over
 ```
 
 #### Get all polls
-
+| Endpoint | Description |
+|---|---|
 | 'api/polls' | Get all the available polls |
 
 #### Submit answers to a poll
+| Endpoint | Description |
+|---|---|
 | 'api/polls/:pollId/submit' | Vote submit for a poll |
 
 ```json
@@ -76,9 +79,10 @@ This document serves as a guide to the Poll API application. It provides an over
 
 #### Get poll analytics
 //currently only number of total votes is available
-
-|'api/polls/:pollId/analytics'| Get analytics for a specific the available polls |
-|'api/polls/analytics'| Get analytics for all the available polls | 
+| Endpoint | Description |
+|---|---|
+| 'api/polls/:pollId/analytics' | Get analytics for a specific the available polls |
+| 'api/polls/analytics' | Get analytics for all the available polls | 
 
 ### Development and Testing
 
