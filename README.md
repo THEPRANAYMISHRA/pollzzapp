@@ -20,13 +20,13 @@ This document serves as a guide to the Poll API application. It provides an over
 
 ### API Endpoints
 
-| Endpoint | Description |
-|---|---|
-| `/polls` | Get all polls |
-| `/polls/:id` | Get a specific poll by ID |
-| `/polls/:id/questions` | Get all questions for a specific poll |
-| `/polls/:id/vote` | Submit answers to a poll |
-| `/analytics` | Get poll analytics |
+| Endpoint | Description | Method |
+|---|---|---|
+| `api/polls` | Get all polls | GET |
+| `api/polls/:pollId` | Update a specific poll | PUT |
+| `api/polls/:pollId/questions` | Get all questions for a specific poll | GET |
+| `/api/polls/:pollId/submit` | Submit answers to a poll | POST |
+| `api/polls/analytics` | Get poll analytics | GET |
 
 ### Example Usage
 
@@ -58,14 +58,14 @@ This document serves as a guide to the Poll API application. It provides an over
 ```
 
 #### Get all polls
-| Endpoint | Description |
-|---|---|
-| 'api/polls' | Get all the available polls |
+| Endpoint | Description | Method |
+|---|---|---|
+| 'api/polls' | Get all the available polls | GET |
 
 #### Submit answers to a poll
-| Endpoint | Description |
-|---|---|
-| 'api/polls/:pollId/submit' | Vote submit for a poll |
+| Endpoint | Description | Method |
+|---|---|---|
+| 'api/polls/:pollId/submit' | Vote submit for a poll | POST |
 
 ```json
 {
@@ -79,10 +79,10 @@ This document serves as a guide to the Poll API application. It provides an over
 
 #### Get poll analytics
 //currently only number of total votes is available
-| Endpoint | Description |
-|---|---|
-| 'api/polls/:pollId/analytics' | Get analytics for a specific the available polls |
-| 'api/polls/analytics' | Get analytics for all the available polls | 
+| Endpoint | Description | Method |
+|---|---|---|
+| 'api/polls/:pollId/analytics' | Get analytics for a specific the available polls | GET |
+| 'api/polls/analytics' | Get analytics for all the available polls | GET |
 
 ### Development and Testing
 
