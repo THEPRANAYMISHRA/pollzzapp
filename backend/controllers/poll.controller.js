@@ -45,6 +45,21 @@ const handleGetAllPolls = async (req, res) => {
     return res.status(200).send({ "Polls": polls, "questions": questions })
 }
 
+// this is for getting questions from a specific poll
+
+const handleGetAllQuestionsForAPolls = async (req, res) => {
+    let pollId = req.params.pollId
+    let pageNumber = parseInt(req.query.page)
+    let questionPerPage = 2;
+    const startIndex = (pageNumber - 1) * questionPerPage;
+    const endIndex = pageNumber * questionPerPage;
+    let totalQuestions = await QuestionSet.findAll({ where: { pollId: pollId } });
+    let paginatedQuestions = totalQuestions.slice(startIndex, endIndex);
+    let totalNumberOfQuestion = totalQuestions.length;
+    let totalPages = Math.ceil(totalNumberOfQuestion / questionPerPage);
+    return res.status(200).send({ "totalQuestions": paginatedQuestions, "totalPages": totalPages, "currentPage": pageNumber })
+}
+
 // this is for updating a specific poll details
 const handleUpdatePoll = async (req, res) => {
     let pollId = req.params.pollId
@@ -110,5 +125,5 @@ const handlePollsAnalaytics = async (req, res) => {
     }
 }
 
-module.exports = { handleCreateNewPoll, handleGetAllPolls, handleUpdatePoll, handleSubmitForAPoll, handlePollsAnalaytics }
+module.exports = { handleCreateNewPoll, handleGetAllPolls, handleUpdatePoll, handleSubmitForAPoll, handlePollsAnalaytics, handleGetAllQuestionsForAPolls }
 
