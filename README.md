@@ -24,7 +24,7 @@ This document serves as a guide to the Poll API application. It provides an over
 |---|---|---|
 | `api/polls` | Get all polls | GET |
 | `api/polls/:pollId` | Update a specific poll | PUT |
-| `api/polls/:pollId/questions` | Get all questions for a specific poll | GET |
+| `api/polls/:pollId/questions?page=1` | Get all questions for a specific poll | GET |
 | `/api/polls/:pollId/submit` | Submit answers to a poll | POST |
 | `api/polls/analytics` | Get poll analytics | GET |
 
